@@ -1,0 +1,35 @@
+using System;
+
+abstract class Figura
+{
+    public abstract double CalcularArea();
+}
+
+interface ICalculable
+{
+    void MostrarCalculo();
+}
+
+class Cuadrado : Figura, ICalculable
+{
+    public double Lado { get; set; }
+
+    public override double CalcularArea()
+    {
+        return Lado * Lado;
+    }
+
+    public void MostrarCalculo()
+    {
+        Console.WriteLine($"El área del cuadrado es: {CalcularArea()}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Cuadrado miCuadrado = new Cuadrado { Lado = 5 };
+        miCuadrado.MostrarCalculo();
+    }
+}
