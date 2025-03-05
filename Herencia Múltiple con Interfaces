@@ -1,0 +1,34 @@
+using System;
+
+interface IDispositivoElectronico
+{
+    void Encender();
+}
+
+interface IRecargable
+{
+    void Recargar();
+}
+
+class Celular : IDispositivoElectronico, IRecargable
+{
+    public void Encender()
+    {
+        Console.WriteLine("El celular se ha encendido.");
+    }
+
+    public void Recargar()
+    {
+        Console.WriteLine("El celular está recargando la batería.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Celular miCelular = new Celular();
+        miCelular.Encender();
+        miCelular.Recargar();
+    }
+}
