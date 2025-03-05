@@ -1,0 +1,43 @@
+using System;
+
+class Empleado
+{
+    public string Nombre { get; set; }
+    public double Salario { get; set; }
+
+    public void MostrarInfo()
+    {
+        Console.WriteLine($"Empleado: {Nombre}, Salario: {Salario:C}");
+    }
+}
+
+class Gerente : Empleado
+{
+    public void Administrar()
+    {
+        Console.WriteLine($"{Nombre} está gestionando la empresa.");
+    }
+}
+
+class Programador : Empleado
+{
+    public void Programar()
+    {
+        Console.WriteLine($"{Nombre} está escribiendo código.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Gerente gerente = new Gerente { Nombre = "Laura", Salario = 5000 };
+        Programador programador = new Programador { Nombre = "Carlos", Salario = 3000 };
+
+        gerente.MostrarInfo();
+        gerente.Administrar();
+
+        programador.MostrarInfo();
+        programador.Programar();
+    }
+}
