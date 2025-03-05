@@ -1,0 +1,36 @@
+using System;
+
+class Vehiculo
+{
+    public void Moverse()
+    {
+        Console.WriteLine("El vehículo se está moviendo.");
+    }
+}
+
+class Automovil : Vehiculo
+{
+    public void Encender()
+    {
+        Console.WriteLine("El automóvil está encendido.");
+    }
+}
+
+class Deportivo : Automovil
+{
+    public void Acelerar()
+    {
+        Console.WriteLine("El deportivo acelera rápidamente.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Deportivo miDeportivo = new Deportivo();
+        miDeportivo.Moverse();
+        miDeportivo.Encender();
+        miDeportivo.Acelerar();
+    }
+}
