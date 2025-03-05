@@ -1,0 +1,29 @@
+using System;
+
+class Animal
+{
+    public string Nombre { get; set; }
+
+    public void HacerSonido()
+    {
+        Console.WriteLine("El animal hace un sonido.");
+    }
+}
+
+class Perro : Animal
+{
+    public void Ladrar()
+    {
+        Console.WriteLine($"{Nombre} está ladrando: ¡Guau, guau!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Perro miPerro = new Perro { Nombre = "Rex" };
+        miPerro.HacerSonido();
+        miPerro.Ladrar();
+    }
+}
